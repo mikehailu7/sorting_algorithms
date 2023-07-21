@@ -1,5 +1,4 @@
 #include "sort.h"
-void swap(int *a, int *b);
 
 /**
  * swap: This function ill swap two pointers to integer
@@ -9,7 +8,6 @@ void swap(int *a, int *b);
 void swap(int *a, int *b)
 {
 	int swap;
-
 	swap = *a;
 	*a = *b;
 	*b = swap;
