@@ -17,7 +17,6 @@ typedef struct listint_s
 	struct listint_s *next;
 } listint_t;
 
-void swap(int *array, int item1, int item2);
 void print_list(const listint_t *list);
 void selection_sort(int *array, size_t size);
 void swap(int *array, ssize_t item1, ssize_t item2);
