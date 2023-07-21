@@ -9,7 +9,7 @@
  */
 void shell_sort(int *array, size_t size)
 {
-	size_t gap = 1, m, index = 0;
+	size_t gap = 1, i, index = 0;
 
 	if (array == NULL || size < 2)
 		return;
@@ -17,8 +17,8 @@ void shell_sort(int *array, size_t size)
 		gap = 3 * gap + 1;
 	while (gap >= 1)
 	{
-		for (m = gap; m < size; m++)
-			for (index = m; index >= gap &&
+		for (i = gap; i < size; i++)
+			for (index = i; index >= gap &&
 					(array[index] < array[index - gap]);
 					index -= gap)
 				swap(array, index, index - gap);
