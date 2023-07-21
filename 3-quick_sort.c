@@ -1,4 +1,5 @@
 #include "sort.h"
+
 /**
  * quick_sort: This will sort undergo the quick sort.
  * @array: This represents the array.
@@ -19,7 +20,7 @@ void quick_sort(int *array, size_t size)
  * Authors: MikiasHailu and YaredTsgie
  * project: Swap
  */
-void swap(int *array, size_t item1, size_t item2)
+void swap(int *array, ssize_t item1, ssize_t item2)
 {
 	int tmp;
 
@@ -36,7 +37,7 @@ void swap(int *array, size_t item1, size_t item2)
  * Authors: MikiasHailu and YaredTsgie
  * project: Partition
  */
-int L_part(int *array, size_t first, size_t last, size_t size)
+int L_part(int *array, ssize_t first, ssize_t last, size_t size)
 {
 	int pivot = array[last];
 	ssize_t current = first, finder;
@@ -69,7 +70,7 @@ int L_part(int *array, size_t first, size_t last, size_t size)
  * Authors: MikiasHailu and YaredTsgie
  * project: Sort
  */
-void quicksort_2(int *array, size_t first, size_t last, int size)
+void quicksort_2(int *array, ssize_t first, ssize_t last, int size)
 {
 	ssize_t position = 0;
 
@@ -81,4 +82,3 @@ void quicksort_2(int *array, size_t first, size_t last, int size)
 		quicksort_2(array, position + 1, last, size);
 	}
 }
-
