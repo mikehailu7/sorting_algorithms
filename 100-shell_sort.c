@@ -1,5 +1,5 @@
 #include "sort.h"
-
+void swap(int *array, int item1, int item2);
 /**
  * swap: This fucntion will swap the items in array.
  * @array: This represents the array
