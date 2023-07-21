@@ -1,3 +1,4 @@
+#include "sort.h"
 /**
  * bubble_sort: This funciton will sort array in increasing order.
  * @size: This one is the size of the array.
