@@ -22,7 +22,7 @@ void cocktail_sort_list(listint_t **list)
 		{
 			if (node->n > node->next->n)
 			{
-				node = swap_node(node->next, list);
+				node = s_list(node->next, list);
 				s_list = 1;
 				print_list(*list);
 			}
