@@ -1,5 +1,5 @@
 #include "sort.h"
-void swap(int *array, int item1, int item2);
+
 /**
  * swap: This fucntion will swap the items in array.
  * @array: This represents the array
@@ -8,7 +8,7 @@ void swap(int *array, int item1, int item2);
  * Authors: MikiasHailu and YaredTsgie
  * project: Swap
  */
-void swap(int *array, int item1, int item2)
+void swp(int *array, int item1, int item2)
 {
 
 	int tmp;
@@ -38,7 +38,7 @@ void shell_sort(int *array, size_t size)
 			for (index = m; index >= gap &&
 					(array[index] < array[index - gap]);
 					index -= gap)
-				swap(array, index, index - gap);
+				swp(array, index, index - gap);
 		print_array(array, size);
 		gap /= 3;
 	}
