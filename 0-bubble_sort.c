@@ -8,7 +8,7 @@
  */
 void bubble_sort(int *array, size_t size)
 {
-	size_t m, n, size2 = size;
+	size_t m, n, sze = size;
 	int tmp, flag = 0;
 
 	if (array == NULL || size < 2)
@@ -29,6 +29,6 @@ void bubble_sort(int *array, size_t size)
 		if (flag == 0)
 			break;
 		flag = 0;
-		size2--;
+		sze--;
 	}
 }
