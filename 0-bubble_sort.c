@@ -1,18 +1,3 @@
-#include "sort.h"
-
-/**
- * swap: This function ill swap two pointers to integer
- * Authors: MikiasHailu and YaredTsgie
- * project: BubbleSort
- */
-void swap(int *a, int *b)
-{
-	int swap;
-	swap = *a;
-	*a = *b;
-	*b = swap;
-}
-
 /**
  * bubble_sort: This funciton will sort array in increasing order.
  * @size: This one is the size of the array.
@@ -22,16 +7,27 @@ void swap(int *a, int *b)
  */
 void bubble_sort(int *array, size_t size)
 {
-	unsigned int m = 0, n = 0;
+	size_t i, j, size2 = size;
+	int tmp, flag = 0;
 
-	if (size <= 1)
+	if (array == NULL || size < 2)
 		return;
-
-	for (m = 0; m < (size - 1); m++)
-		for (n = 1; n < size; n++)
-			if (array[n - 1] > array[j])
+	for (i = 0; i < size; i++)
+	{
+		for (j = 1; j < size2; j++)
+		{
+			if (array[j - 1] > array[j])
 			{
-				swap(&array[n - 1], &array[n]);
+				flag = 1;
+				tmp = array[j];
+				array[j] = array[j - 1];
+				array[j - 1] = tmp;
 				print_array(array, size);
 			}
+		}
+		if (flag == 0)
+			break;
+		flag = 0;
+		size2--;
+	}
 }
