@@ -1,33 +1,6 @@
 #include "sort.h"
 
 /**
- * shell_sort: This function will sort the integer in increasing order.
- * @size: size of the array
- * @array: list with numbers
- * Authors: MikiasHailu and YaredTsgie
- * project: Shell
- */
-void shell_sort(int *array, size_t size)
-{
-	size_t gap = 1, i, index = 0;
-
-	if (array == NULL || size < 2)
-		return;
-	while (gap < size / 3)
-		gap = 3 * gap + 1;
-	while (gap >= 1)
-	{
-		for (i = gap; i < size; i++)
-			for (index = i; index >= gap &&
-					(array[index] < array[index - gap]);
-					index -= gap)
-				swap(array, index, index - gap);
-		print_array(array, size);
-		gap /= 3;
-	}
-}
-
-/**
  * swap: This fucntion will swap the items in array.
  * @array: This represents the array
  * @item1: This is the array element
@@ -43,4 +16,30 @@ void swap(int *array, int item1, int item2)
 	tmp = array[item1];
 	array[item1] = array[item2];
 	array[item2] = tmp;
+}
+/**
+ * shell_sort: This function will sort the integer in increasing order.
+ * @size: size of the array
+ * @array: list with numbers
+ * Authors: MikiasHailu and YaredTsgie
+ * project: Shell
+ */
+void shell_sort(int *array, size_t size)
+{
+	size_t gap = 1, m, index = 0;
+
+	if (array == NULL || size < 2)
+		return;
+	while (gap < size / 3)
+		gap = 3 * gap + 1;
+	while (gap >= 1)
+	{
+		for (m = gap; m < size; m++)
+			for (index = m; index >= gap &&
+					(array[index] < array[index - gap]);
+					index -= gap)
+				swap(array, index, index - gap);
+		print_array(array, size);
+		gap /= 3;
+	}
 }
