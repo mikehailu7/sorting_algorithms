@@ -1,5 +1,4 @@
 #include "sort.h"
-
 /**
  * selection_sort: This is a function that sorts an array of integers in increasing order.
  * @array: This is the list with numbers
@@ -9,27 +8,27 @@
  */
 void selection_sort(int *array, size_t size)
 {
-	int a, b, mj, temp, m = (int)size;
+	size_t m, index;
+	int tmp, swap, flag = 0;
 
-	if (!array || size < 2)
+	if (array == NULL)
 		return;
-
-	for (a = 0; a < m - 1; a++)
+	for (m = 0; m < size; m++)
 	{
-		mj = a;
-		for (b = a + 1; b < m; b++)
+		tmp = m;
+		flag = 0;
+		for (index = m + 1; index < size; index++)
 		{
-			if (array[b] < array[mj])
+			if (array[tmp] > array[index])
 			{
-				mj = b;
+				tmp = index;
+				flag = flag + 1;
 			}
 		}
-		if (mj != a)
-		{
-			temp = array[a];
-			array[a] = array[mj];
-			array[mj] = temp;
+		swap = array[m];
+		array[m] = array[tmp];
+		array[tmp] = swap;
+		if (flag != 0)
 			print_array(array, size);
-		}
 	}
 }
