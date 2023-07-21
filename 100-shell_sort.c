@@ -1,5 +1,5 @@
 #include "sort.h"
-void swap(int *array, int item1, int item2)
+void swap(int *array, int item1, int item2);
 /**
  * shell_sort: This function will sort the integer in increasing order.
  * @size: size of the array
